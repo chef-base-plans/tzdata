@@ -1,8 +1,10 @@
 plan_timezones = input("plan_timezones")
-plan_name = input("plan_name", value: "core/tzdata")
+plan_name = input("plan_name", value: "tzdata")
 base_dir = input("base_dir", value: "include")
 
-hab_pkg_path = command("hab pkg path #{plan_name}")
+plan_ident = "#{ENV["HAB_ORIGIN"]}/#{plan_name}"
+
+hab_pkg_path = command("hab pkg path #{plan_ident}")
 describe hab_pkg_path do
   its('exit_status') { should eq 0 }
   its('stdout') { should_not be_empty }
