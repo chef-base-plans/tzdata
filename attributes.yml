@@ -1,4 +1,4 @@
-plan_name : "core/tzdata"
+plan_name : "tzdata"
 base_dir : "/share/zoneinfo"
 plan_timezones :
     - "US"
